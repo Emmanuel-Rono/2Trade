@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="campaignsPageFragment"
+            type="com.beren.capstone_project.fragments.CampaignsPageFragment" />
+        <variable
+            name="discountadapter"
+            type="com.beren.capstone_project.adapters.CampaignsItemAdapter" />
+
+    </data>
+<!--<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragments.CampaignsPageFragment"
+    android:background="#f8f4ff"
+    >
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbarProm"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#f8f4ff"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:navigationIcon="@drawable/go_back_icon">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:fontFamily="@font/numans"
+            android:text="Kampanyalar"
+            android:textColor="@color/malibu_blue"
+            android:textSize="24sp"
+            tools:layout_editor_absoluteX="134dp"
+            tools:layout_editor_absoluteY="11dp" />
+    </androidx.appcompat.widget.Toolbar>-->
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragments.CampaignsPageFragment"
+    android:background="#f8f4ff">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbarProm"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#f8f4ff"
+            android:minHeight="?attr/actionBarSize"
+            android:theme="?attr/actionBarTheme"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:navigationIcon="@drawable/go_back_icon">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:fontFamily="@font/numans"
+            android:text="Campaigns"
+            android:textColor="@color/malibu_blue"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toBottomOf="@+id/toolbarProm"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:layout_editor_absoluteX="134dp" />
+        </androidx.appcompat.widget.Toolbar>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvitempro"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_centerInParent="true"
+            android:layout_marginEnd="6dp"
+            android:layout_marginRight="6dp"
+            android:adapter="@{discountadapter}"
+            android:clipToPadding="false"
+            android:foregroundGravity="center"
+            android:overScrollMode="never"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/toolbarProm" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</RelativeLayout>
+
+
+</layout>

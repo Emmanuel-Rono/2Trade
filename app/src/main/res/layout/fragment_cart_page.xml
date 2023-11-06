@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="cartPageFragment"
+            type="com.beren.capstone_project.fragments.CartPageFragment" />
+        <variable
+            name="cartadapter"
+            type="com.beren.capstone_project.adapters.CartItemsAdapter" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <!--  <com.google.android.material.appbar.AppBarLayout
+              android:id="@+id/appbar"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"/>-->
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/appbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="0dp"
+            android:layout_alignParentTop="true"
+            app:navigationIcon="@drawable/go_back_icon"
+            android:minHeight="?attr/actionBarSize"
+            android:theme="?attr/actionBarTheme"
+            tools:targetApi="lollipop">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:fontFamily="@font/numans"
+                android:text="Sepetim"
+                android:textColor="@color/malibu_blue"
+                android:textSize="24sp"
+                tools:layout_editor_absoluteX="134dp"
+                tools:layout_editor_absoluteY="11dp" />
+        </androidx.appcompat.widget.Toolbar>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_cart_items"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="8dp"
+            android:layout_marginLeft="4dp"
+            android:layout_marginRight="4dp"
+            android:layout_below="@+id/appbar"
+            android:layout_above="@+id/lyprice"
+            app:adapter="@{cartadapter}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            />
+        <LinearLayout
+            android:id="@+id/lyprice"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_margin="8dp"
+            android:layout_alignParentBottom="true">
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="8dp"
+                    android:weightSum="8"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="4"
+                        android:fontFamily="@font/numans"
+                        android:text="Toplam:"
+                        android:textColor="@color/dark_text_color"
+                        android:textSize="24sp" />
+
+                    <TextView
+                        android:id="@+id/totalpricecart"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="4"
+                        android:fontFamily="@font/numans"
+                        android:gravity="right"
+                        android:text="419,98₺"
+                        android:textColor="@color/dark_text_color"
+                        android:textSize="20sp" />
+
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+            <Button
+                android:id="@+id/btn_order"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/button_background"
+                android:layout_marginBottom="8dp"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/nunito_bold"
+                android:text="Siparişi tamamla"
+                />
+
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+
+</layout>

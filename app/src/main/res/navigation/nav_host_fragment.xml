@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_host_fragment"
+    app:startDestination="@id/homePageFragment">
+
+    <fragment
+        android:id="@+id/homePageFragment"
+        android:name="com.beren.capstone_project.fragments.HomePageFragment"
+        android:label="fragment_home_page"
+        tools:layout="@layout/fragment_home_page" >
+        <action
+            android:id="@+id/actionToDetails"
+            app:destination="@id/courseDetailsFragment" />
+        <action
+            android:id="@+id/actionToCart"
+            app:destination="@id/cartPageFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/campaignsPageFragment"
+        android:name="com.beren.capstone_project.fragments.CampaignsPageFragment"
+        android:label="fragment_campaigns_page"
+        tools:layout="@layout/fragment_campaigns_page" >
+        <action
+            android:id="@+id/actionFromProm"
+            app:destination="@id/cartPageFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/cartPageFragment"
+        android:name="com.beren.capstone_project.fragments.CartPageFragment"
+        android:label="fragment_chart_page"
+        tools:layout="@layout/fragment_cart_page" />
+    <fragment
+        android:id="@+id/profilePageFragment"
+        android:name="com.beren.capstone_project.fragments.ProfilePageFragment"
+        android:label="fragment_profile_page"
+        tools:layout="@layout/fragment_profile_page" />
+    <fragment
+        android:id="@+id/courseDetailsFragment"
+        android:name="com.beren.capstone_project.fragments.CourseDetailsFragment"
+        android:label="CourseDetailsFragment"
+        tools:layout="@layout/fragment_course_details">
+        <argument
+            android:name="courseDetailsObject"
+            app:argType="com.beren.capstone_project.entity.Products" />
+    </fragment>
+</navigation>
